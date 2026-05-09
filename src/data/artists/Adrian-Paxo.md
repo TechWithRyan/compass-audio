@@ -1,9 +1,10 @@
 ---
 name: 'Adrian Paxo'
 stage_name: 'Paxo'
+id: 'adrian-paxo'
 genre: 'Rap'
 image:
-  src: '/images/artists/Paxo.jpeg'
+  src: '/images/artists/adrian-paxo.webp'
   alt: 'Adrian Paxo, Rapper'
 ---
 

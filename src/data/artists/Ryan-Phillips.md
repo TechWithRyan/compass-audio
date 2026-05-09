@@ -1,9 +1,10 @@
 ---
 name: 'Ryan-Phillips Cornelio'
 stage_name: 'RyBeats'
+id: 'ryan-phillips'
 genre: 'Multi-Genre Producer'
 image:
-  src: '/images/artists/Ryan-phillips.jpeg'
+  src: '/images/artists/ryan-phillips.webp'
   alt: 'Ryan-Phillips Cornelio, Music Producer and Founder of Compass Audio'
 ---
 
