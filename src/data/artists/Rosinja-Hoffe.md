@@ -4,7 +4,7 @@ stage_name: 'Rosinja'
 id: 'rosinja-hoffe'
 genre: 'Pop'
 image:
-  src: '/images/artists/rosinja.webp'
+  src: '/images/artists/rosinja.jpg'
   alt: 'Rosinja Hoffe, Pop artist'
 ---
 
