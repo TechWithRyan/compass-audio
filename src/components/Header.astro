@@ -4,6 +4,7 @@ import Separator from "../components/Separator.astro";
 
 // Get the current pathname
 const currentPath = Astro.url.pathname;
+
 // Define a map of routes
 const routes = {
   "/": "Home",
@@ -12,37 +13,45 @@ const routes = {
   "/history/": "History",
   "/contact/": "Contact",
 };
+
 // Determine the active route
 const activeRoute = routes[currentPath] || null;
 ---
 
 <header>
-  <h1>
-    <a href="/" class={activeRoute === "Home" ? "current" : ""}
-      ><TextSlider content="Compass Audio" /></a>
-  </h1>
-  <span><TextSlider content="Record Label" /></span>
+  <div class="logo-section">
+    <img src="/images/logo.png" alt="Compass Audio Logo" class="logo" />
+    <div class="text">
+      <h1>
+        <a href="/" class={activeRoute === "Home" ? "current" : ""}>
+          <TextSlider content="Compass Audio" />
+        </a>
+      </h1>
+      <span><TextSlider content="Record Label" /></span>
+    </div>
+  </div>
+  
   <ul>
     <li>
-      <a
+      
         href="/releases/"
         class={activeRoute === "Releases" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Releases" /></a>
     </li>
     <li>
-      <a
+      
         href="/history/"
         class={activeRoute === "History" ? "current" : ""}
         data-astro-prefetch><TextSlider content="History" /></a>
     </li>
     <li>
-      <a
+      
         href="/store/"
         class={activeRoute === "Store" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Store" /></a>
     </li>
     <li>
-      <a
+      
         href="/contact/"
         class={activeRoute === "Contact" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Contact" /></a>
@@ -54,31 +63,55 @@ const activeRoute = routes[currentPath] || null;
 <style>
   header {
     position: relative;
-    display: grid;
-    grid-template-columns: min-content auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-weight: 700;
     padding: 1rem 0;
+    gap: 2rem;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
     gap: 1rem;
   }
-  header a.current {
-    pointer-events: none;
+
+  .logo {
+    height: 50px;
+    width: auto;
   }
-  h1 {
+
+  .text h1 {
     font-size: 1rem;
     font-weight: inherit;
     margin: 0;
   }
+
+  .text span {
+    font-size: 0.8rem;
+  }
+
+  header a.current {
+    pointer-events: none;
+  }
+
   ul {
     display: flex;
     list-style: none;
     gap: 1rem;
     margin: 0;
     padding: 0;
-    grid-column: auto / span 2;
   }
-  @media screen and (min-width: 50em) {
+
+  @media screen and (max-width: 50em) {
     header {
-      grid-template-columns: 20vw 1fr auto auto;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .logo {
+      height: 40px;
     }
   }
 </style>

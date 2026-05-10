@@ -1,31 +1,100 @@
 ---
-import Separator from "../components/Separator.astro";
 ---
 
-<Separator />
 <footer>
-  <p>
-    Based on the <a
-      href="https://dribbble.com/shots/25156320-Players-Club-UI-Animation"
-      >design</a
-    > by <a href="https://alextkachev.com/">Alex Tkachev</a>. Coded in <a
-      href="https://astro.build/">Astro 5.2</a
-    > by <a href="https://www.codrops.com">Codrops</a>.
-  </p>
-  <p>
-    Browse the <a href="https://github.com/crnacura/PlayersClub">GitHub repo</a
-    >. Read the <a href="https://tympanus.net/codrops/?p=86632">article</a>.
-  </p>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>
+        <a href="mailto:ryan.cornelio@gmail.com">ryan.cornelio@gmail.com</a>
+      </p>
+      <p>
+        <a href="tel:+46760581267">0760 58 12 67</a>
+      </p>
+      <p>Kastalagatan 5<br />44236 KUNGÄLV<br />Sweden</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="socials">
+        <li>
+          <a href="https://youtube.com/@compass-audio" target="_blank"
+            >YouTube</a>
+        </li>
+        <li>
+          <a href="https://instagram.com/compassaudio.se" target="_blank"
+            >Instagram</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Compass Audio. All rights reserved.</p>
+  </div>
 </footer>
+
 <style>
   footer {
-    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 0 2rem;
+    margin-top: 6rem;
+    font-size: 0.9rem;
+    color: #999;
   }
-  p {
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .footer-section h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .footer-section p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .footer-section a {
+    color: #4ade80;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #22c55e;
+  }
+
+  .socials {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-weight: bold;
-    line-height: 1.4;
+  }
+
+  .socials li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-bottom {
     text-align: center;
-    color: var(--color-text-alt);
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666;
+    font-size: 0.85rem;
+  }
+
+  @media screen and (max-width: 50em) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 </style>
